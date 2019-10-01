@@ -14,6 +14,4 @@ jobs:
         args: builds submit --tag gcr.io/$CLOUDSDK_CORE_PROJECT/$APP_NAME
     - uses: mapfap/gcloud/fastcli@master
       with:
-        args: |
-          beta run deploy $APP_NAME --image gcr.io/$CLOUDSDK_CORE_PROJECT/$APP_NAME \ 
-          --platform managed --region asia-northeast1 --allow-unauthenticated
+        args: beta run deploy $APP_NAME --image gcr.io/$CLOUDSDK_CORE_PROJECT/$APP_NAME --platform managed --region asia-northeast1 --allow-unauthenticated
