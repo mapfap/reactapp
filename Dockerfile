@@ -12,4 +12,4 @@ COPY --from=builder /usr/src/app/build /usr/share/nginx/html
 COPY nginx.conf.template /etc/nginx/conf.d/
 WORKDIR /usr/share/nginx/html
 
-CMD /bin/bash -c "envsubst < /etc/nginx/conf.d/nginx.conf.template > /etc/nginx/nginx.conf && exec nginx -g 'daemon off;'"
+ENTRYPOINT /bin/bash -c "envsubst < /etc/nginx/conf.d/nginx.conf.template > /etc/nginx/nginx.conf && exec nginx -g 'daemon off;'"
