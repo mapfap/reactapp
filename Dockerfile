@@ -1,4 +1,4 @@
-FROM node:10.16.3 AS builder
+FROM node:10-alpine AS builder
 RUN mkdir -p /usr/src/app
 WORKDIR /usr/src/app
 COPY package*.json ./
