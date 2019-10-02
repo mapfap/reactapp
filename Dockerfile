@@ -7,7 +7,7 @@ COPY src/ ./src
 COPY public/ ./public
 RUN npm run build
 
-FROM nginx:1.16.1
+FROM nginx:1-alpine
 COPY --from=builder /usr/src/app/build /usr/share/nginx/html
 COPY nginx.conf.template /etc/nginx/conf.d/
 WORKDIR /usr/share/nginx/html
