@@ -6,6 +6,7 @@ jobs:
       APP_NAME: reactapp
       CLOUDSDK_CORE_PROJECT: ao00-254402
       GCLOUD_AUTH: ${{ secrets.GCLOUD_AUTH }}
+      API: https://nodeapp-vkccn73xiq-an.a.run.app
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v1
@@ -14,4 +15,4 @@ jobs:
         args: builds submit --tag gcr.io/$CLOUDSDK_CORE_PROJECT/$APP_NAME
     - uses: mapfap/gcloud/fastcli@master
       with:
-        args: beta run deploy $APP_NAME --image gcr.io/$CLOUDSDK_CORE_PROJECT/$APP_NAME --platform managed --region asia-northeast1 --allow-unauthenticated
+        args: beta run deploy $APP_NAME --image gcr.io/$CLOUDSDK_CORE_PROJECT/$APP_NAME --platform managed --region asia-northeast1 --allow-unauthenticated --set-env-vars API="$API"

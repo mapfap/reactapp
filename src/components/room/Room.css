@@ -1,0 +1,13 @@
+.room {
+	background: #0d0e11;
+	padding: 1em 2em;
+	cursor: pointer;
+}
+
+.occupied {
+	color: #fc656a;
+}
+
+.free {
+	color: #4aff73;
+}

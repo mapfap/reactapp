@@ -3,13 +3,21 @@ events {
 }
 
 http {
+
     server {
+        
+        include mime.types;
+
         listen       ${PORT};
         server_name  localhost;
 
         location / {
             root   /usr/share/nginx/html;
             index  index.html index.htm;
+        }
+
+        location /api {
+            proxy_pass  ${API}/api;
         }
 
         error_page   500 502 503 504  /50x.html;
