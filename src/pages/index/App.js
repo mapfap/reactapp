@@ -1,16 +1,14 @@
 import React from 'react';
 import './App.css';
-import RoomList from '../../components/room/RoomList';
+import Button from '../../components/Button';
 
 class App extends React.Component {
-  
-  render () {
+  render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <h2> Room Finder </h2>
-          <RoomList/>
-        </header>
+      <div class="dialog">
+        <p> Please select your option for this record. </p>
+        <Button text="Archive" color="blue" />
+        <Button text="Delete" color="red" />
       </div>
     );
   }
